@@ -32,20 +32,33 @@
     }
 
     if(isset($_GET['debug'])) {
-        echo 'debogage';
+        echo'<h1>Debug</h1>';
+        print_r($_SESSION['table']);
     }
 
     if(isset($_GET['concat'])) {
-        echo 'concat';
+        echo'<h1>Concaténation</h1>
+        <h3>Construction d\'une phrase avec les données du tableau</h3> <br>';
+        echo '<h2>'. $_SESSION['table'] . $_SESSION['table']. '</h2><br>
+        Mon nom est '.  $_SESSION['table'].'j\'ai '.  $_SESSION['table'].'et je suis '. $_SESSION['table'] . '<br>
+        <h3>Construction d\'une phrase</h3><br>
+        <h2>'. $_SESSION['table'] . strtoupper($_SESSION['table']). '</h2>
+        Mon nom est '.  $_SESSION['table'].', j\'ai '.  $_SESSION['table'].', je suis '. $_SESSION['table'] . '<br>'
+        . str_replace(',','.','Mon nom est,,,,,,,,,,');
     }
     if(isset($_GET['boucle'])) {
-        echo 'boucle';
+        echo'<h1>Boucle</h1>';
+        for ($i=0; $i < 10; $i++) { 
+            echo $i . 'lala <br>';
+        }
     }
     if(isset($_GET['fonction'])) {
-        echo 'fonction';
+        echo'<h1>Fonction</h1>';
     }
     if(isset($_GET['delete'])) {
-        echo 'delete';
+        echo'<h1>Delete</h1>';
+        session_destroy();
+        echo'Données supprimées';
     }
     if(isset($_GET['delete'])) {
         echo 'delete';
