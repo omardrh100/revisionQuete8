@@ -12,9 +12,20 @@
         </div>
         <div class="col-8">
             <button type="button" class="btn btn-dark"><a href="index.php?form">Ajoutée des données</a></button>
+            <?php if(isset($_SESSION['table'])) {
+            echo '<button type="button" class="btn btn-secondary"><a class="text-light" href="index.php?formBonus">Ajoutée plus de données</a></button>';
+            }
+            ?>
+    
+            
+
+
             <?php   if(isset($_GET['form'])) {
-        include 'include/form.php';
-    } ?>
+                include 'include/form.php';
+            } ?>
+            <?php   if(isset($_GET['formBonus'])) {
+                include 'include/formBonus.php';
+            } ?>
         </div>
     </div>
 </div>
