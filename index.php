@@ -14,7 +14,8 @@
         include 'include/ul.php';
     }
     if(isset($_GET['debug'])) {
-        echo 'debogage';
+        echo'<h1>Debug</h1>';
+        print_r($_SESSION['table']);
     }
     if(isset($_GET['concat'])) {
         echo 'concat';
