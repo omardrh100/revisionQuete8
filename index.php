@@ -23,7 +23,14 @@
         print_r($_SESSION['table']);
     }
     if(isset($_GET['concat'])) {
-        echo'<h1>Concaténation</h1>';
+        echo'<h1>Concaténation</h1>
+        <h3>Construction d\'une phrase avec les données du tableau</h3> <br>';
+        echo '<h2>'. $_SESSION['table'] . $_SESSION['table']. '</h2><br>
+        Mon nom est '.  $_SESSION['table'].'j\'ai '.  $_SESSION['table'].'et je suis '. $_SESSION['table'] . '<br>
+        <h3>Construction d\'une phrase</h3><br>
+        <h2>'. $_SESSION['table'] . strtoupper($_SESSION['table']). '</h2>
+        Mon nom est '.  $_SESSION['table'].', j\'ai '.  $_SESSION['table'].', je suis '. $_SESSION['table'] . '<br>'
+        . str_replace(',','.','Mon nom est,,,,,,,,,,');
     }
     if(isset($_GET['boucle'])) {
         echo'<h1>Boucle</h1>';
