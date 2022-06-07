@@ -1,26 +1,40 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="fr">
     <?php include './include/head.php' ?>
 <body>
     <?php include './include/header.php' ?>
 
-
-
-
-
-
+<div class="container">
+    <div class="row" >
+        <div class="col">
+            <button type="button" class="btn btn-light"><a href="index.php?home">Home</a></button>
+        </div>
+        <div class="col">
+            <button type="button" class="btn btn-dark"><a href="index.php?form">Ajoutée des données</a></button>
+        </div>
+    </div>
+</div>
 
 
 
 
     <?php
     // si la session exist, include ul
-    if(!isset($_SESSION['table'])) {
+    if(isset($_SESSION['table'])) {
         include 'include/ul.php';
     }
+    if(isset($_GET['form'])) {
+        include 'include/form.php';
+    }
+    if(isset($_GET['home'])) {
+        include 'include/index.php';
+    }
+
     if(isset($_GET['debug'])) {
         echo 'debogage';
     }
+
     if(isset($_GET['concat'])) {
         echo 'concat';
     }
@@ -33,6 +47,17 @@
     if(isset($_GET['delete'])) {
         echo 'delete';
     }
+    if(isset($_GET['delete'])) {
+        echo 'delete';
+    }
+    if(isset($_GET['submit'])) {
+        echo '
+            <div class="alert alert-success" role="alert">
+            A simple success alert—check it out!
+            </div>
+      ';
+    }
+
 
     ?>
 
