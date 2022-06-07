@@ -11,18 +11,21 @@
     <?php
     // si la session exist, include ul
     if(!isset($_SESSION['table'])) {
-        include 'includes/ul.php';
+        include 'include/ul.php';
     }
-    if(!isset($_GET['concat'])) {
+    if(isset($_GET['debug'])) {
+        echo 'debogage';
+    }
+    if(isset($_GET['concat'])) {
         echo 'concat';
     }
-    if(!isset($_GET['boucle'])) {
+    if(isset($_GET['boucle'])) {
         echo 'boucle';
     }
-    if(!isset($_GET['fonction'])) {
+    if(isset($_GET['fonction'])) {
         echo 'fonction';
     }
-    if(!isset($_GET['delete'])) {
+    if(isset($_GET['delete'])) {
         echo 'delete';
     }
 
