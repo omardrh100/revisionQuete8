@@ -1,6 +1,4 @@
-<?php session_start();
-print_r($_SESSION)
-?>
+<?php session_start();?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -152,10 +150,10 @@ print_r($_SESSION)
         echo'<h1>Concaténation</h1>
         <h3>Construction d\'une phrase avec les données du tableau</h3> <br>';
         echo '<h2>'. $_SESSION['table']['prenom'] . $_SESSION['table']['nom']. '</h2><br>
-        Mon nom est '.  $_SESSION['table']['nom'].'j\'ai '.  $_SESSION['table']['age'].'et je suis '. $_SESSION['table']['fonction'] . '<br>
+        Mon nom est '.  $_SESSION['table']['nom'].'j\'ai '.  $_SESSION['table']['age'].'et je suis '. $_SESSION['table']['metier'] . '<br>
         <h3>Construction d\'une phrase</h3><br>
-        <h2>'. $_SESSION['table'] . strtoupper($_SESSION['table']). '</h2>
-        Mon nom est '.  $_SESSION['table']['nom'].', j\'ai '.  $_SESSION['table']['age'].', je suis '. $_SESSION['table']['fonction'] . '<br>'
+        <h2>'. $_SESSION['table']['prenom']  . strtoupper($_SESSION['table']['nom'] ). '</h2>
+        Mon nom est '.  $_SESSION['table']['nom'].', j\'ai '.  $_SESSION['table']['age'].', je suis '. $_SESSION['table']['metier'] . '<br>'
         . str_replace(',','.','Mon nom est,,,,,,,,,,');
     }
     if(isset($_GET['boucle'])) {

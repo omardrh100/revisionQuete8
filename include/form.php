@@ -7,7 +7,7 @@
 
         <input type="text" name="age" class="form-control" placeholder="Age">
   
-        <input type="number" name="size" class="form-control" placeholder="Taille">
+        <input type="number"  step="0.01" name="size" class="form-control" placeholder="Taille">
 
         
 
@@ -26,6 +26,6 @@
         </div>
 
         <button type="submit" name="submit"  class="btn btn-primary">Submit</button>
-        
+
     </div>
 </form>
