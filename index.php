@@ -7,6 +7,26 @@
     <title>Document</title>
 </head>
 <body>
+<body>
+    <?php
+    // si la session exist, include ul
+    if(!isset($_SESSION['table'])) {
+        include 'includes/ul.php';
+    }
+    if(!isset($_GET['concat'])) {
+        echo 'concat';
+    }
+    if(!isset($_GET['boucle'])) {
+        echo 'boucle';
+    }
+    if(!isset($_GET['fonction'])) {
+        echo 'fonction';
+    }
+    if(!isset($_GET['delete'])) {
+        echo 'delete';
+    }
+
+    ?>
     
 </body>
 </html>
