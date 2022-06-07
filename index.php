@@ -23,16 +23,21 @@
         print_r($_SESSION['table']);
     }
     if(isset($_GET['concat'])) {
-        echo 'concat';
+        echo'<h1>Concaténation</h1>';
     }
     if(isset($_GET['boucle'])) {
-        echo 'boucle';
+        echo'<h1>Boucle</h1>';
+        for ($i=0; $i < 10; $i++) { 
+            echo $i . 'lala <br>';
+        }
     }
     if(isset($_GET['fonction'])) {
-        echo 'fonction';
+        echo'<h1>Fonction</h1>';
     }
     if(isset($_GET['delete'])) {
-        echo 'delete';
+        echo'<h1>Delete</h1>';
+        session_destroy();
+        echo'Données supprimées';
     }
 
     ?>
