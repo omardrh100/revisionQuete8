@@ -1,4 +1,7 @@
-<?php session_start();?>
+<?php session_start();
+print_r($_SESSION)
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
     <?php include './include/head.php' ?>
@@ -16,6 +19,106 @@
     </div>
 </div>
 
+<?php
+
+
+
+        if(isset($_GET['submit'])) {
+
+            if (empty($_GET['firstname'])){
+                echo'<div class="alert alert-danger" role="alert">
+                    A simple danger alert—check it out!
+                    </div>';
+            }
+            else{
+                echo'<div class="alert alert-success" role="alert">
+                    A simple success alert—check it out!
+                </div>';
+            }
+
+
+            if (empty($_GET['lastname'])){
+               echo'<div class="alert alert-danger" role="alert">
+                A simple danger alert—check it out!
+                </div>';
+        
+            }
+            else{
+                echo'<div class="alert alert-success" role="alert">
+                A simple success alert—check it out!
+            </div>';
+            }
+
+           
+            if (empty($_GET['age'])){
+                echo'<div class="alert alert-danger" role="alert">
+                    A simple danger alert—check it out!
+                    </div>';
+            }
+            else{
+                echo'<div class="alert alert-success" role="alert">
+                    A simple success alert—check it out!
+                </div>';
+            }
+            
+
+
+
+            if (empty($_GET['size'])){
+                echo'<div class="alert alert-danger" role="alert">
+                    A simple danger alert—check it out!
+                    </div>';
+            }
+            else{
+                echo'<div class="alert alert-success" role="alert">
+                    A simple success alert—check it out!
+                </div>';
+            }
+
+
+
+            if (empty($_GET['fonction'])){
+                echo'<div class="alert alert-danger" role="alert">
+                    A simple danger alert—check it out!
+                    </div>';
+            }
+            else{
+                echo'<div class="alert alert-success" role="alert">
+                    A simple success alert—check it out!
+                </div>';
+            }
+
+            
+            if (!empty($_GET['firstname']) && !empty($_GET['lastname'])
+                && !empty($_GET['age']) && !empty($_GET['size']) && !empty($_GET['fonction'])){
+                $_SESSION['table'] = [
+                    'nom'=>$_GET['firstname'],
+                    'prenom'=>$_GET['lastname'],
+                    'age'=>$_GET['age'],
+                    'taille'=>$_GET['size'],
+                    'metier'=>$_GET['fonction']
+
+                ];
+                print_r($_SESSION['table']);
+                
+            }
+
+        }
+    
+
+
+
+
+
+
+
+
+?>
+
+
+
+
+
 
 
 
@@ -27,9 +130,7 @@
     if(isset($_GET['form'])) {
         include 'include/form.php';
     }
-    if(isset($_GET['home'])) {
-        include 'include/index.php';
-    }
+
 
     if(isset($_GET['debug'])) {
         echo'<h1>Debug</h1>';
@@ -39,11 +140,11 @@
     if(isset($_GET['concat'])) {
         echo'<h1>Concaténation</h1>
         <h3>Construction d\'une phrase avec les données du tableau</h3> <br>';
-        echo '<h2>'. $_SESSION['table'] . $_SESSION['table']. '</h2><br>
-        Mon nom est '.  $_SESSION['table'].'j\'ai '.  $_SESSION['table'].'et je suis '. $_SESSION['table'] . '<br>
+        echo '<h2>'. $_SESSION['table']['prenom'] . $_SESSION['table']['nom']. '</h2><br>
+        Mon nom est '.  $_SESSION['table']['nom'].'j\'ai '.  $_SESSION['table']['age'].'et je suis '. $_SESSION['table'] . '<br>
         <h3>Construction d\'une phrase</h3><br>
         <h2>'. $_SESSION['table'] . strtoupper($_SESSION['table']). '</h2>
-        Mon nom est '.  $_SESSION['table'].', j\'ai '.  $_SESSION['table'].', je suis '. $_SESSION['table'] . '<br>'
+        Mon nom est '.  $_SESSION['table']['nom'].', j\'ai '.  $_SESSION['table']['age'].', je suis '. $_SESSION['table'] . '<br>'
         . str_replace(',','.','Mon nom est,,,,,,,,,,');
     }
     if(isset($_GET['boucle'])) {
@@ -63,13 +164,7 @@
     if(isset($_GET['delete'])) {
         echo 'delete';
     }
-    if(isset($_GET['submit'])) {
-        echo '
-            <div class="alert alert-success" role="alert">
-            A simple success alert—check it out!
-            </div>
-      ';
-    }
+
 
 
     ?>
