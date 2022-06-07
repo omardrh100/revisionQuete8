@@ -8,10 +8,13 @@
 <div class="container">
     <div class="row" >
         <div class="col">
-            <button type="button" class="btn btn-light"><a href="index.php?home">Home</a></button>
+            <button type="button" class="btn btn-light"><a href="index.php">Home</a></button>
         </div>
-        <div class="col">
+        <div class="col-8">
             <button type="button" class="btn btn-dark"><a href="index.php?form">Ajoutée des données</a></button>
+            <?php   if(isset($_GET['form'])) {
+        include 'include/form.php';
+    } ?>
         </div>
     </div>
 </div>
@@ -23,12 +26,6 @@
     // si la session exist, include ul
     if(isset($_SESSION['table'])) {
         include 'include/ul.php';
-    }
-    if(isset($_GET['form'])) {
-        include 'include/form.php';
-    }
-    if(isset($_GET['home'])) {
-        include 'include/index.php';
     }
 
     if(isset($_GET['debug'])) {
