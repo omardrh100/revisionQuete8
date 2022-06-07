@@ -116,7 +116,12 @@
             }
 
         }
-    
+    if (isset($_GET['submitBonus'])) {
+        $_SESSION['table']['prenom'] = $_GET['firstname'];
+        $_SESSION['table']['age'] = $_GET['age'];
+        $_SESSION['table']['taille'] = $_GET['taille'];
+        $_SESSION['table']['metier'] = $_GET['role'];
+    }
 
 
 

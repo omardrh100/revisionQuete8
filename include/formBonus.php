@@ -3,11 +3,11 @@
                     <div class="col-7 border m-2">
                         <div class="form-group">
                             <label for="firstname">Prénom:</label>
-                            <input type="text" class="form-control" id="firstname"  placeholder="Prénom">
+                            <input type="text" class="form-control" id="firstname"  name="firstname"placeholder="Prénom">
                         </div>
                         <div class="form-group">
                             <label for="name">Nom:</label>
-                            <input type="text" class="form-control" id="name" placeholder="Nom">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Nom">
                         </div>
                         <div class="form-group">
                             <label for="age">Age:</label>
@@ -18,11 +18,11 @@
                             <input type="number" id="taille" name="taille" min="1.70" max="2.00" placeholder="Taille" step="0.01">
                         </div>
                         <div class="custom-control custom-radio">
-                            <input type="radio" id="customRadio1" name="apprenant" class="custom-control-input">
+                            <input type="radio" id="customRadio1" name="role" class="custom-control-input">
                             <label class="custom-control-label" for="customRadio1">Apprenant</label>
                         </div>
                         <div class="custom-control custom-radio">
-                            <input type="radio" id="customRadio2" name="formateur" class="custom-control-input">
+                            <input type="radio" id="customRadio2" name="role" class="custom-control-input">
                             <label class="custom-control-label" for="customRadio2">Formateur</label>
                         </div>
 
