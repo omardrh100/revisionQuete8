@@ -11,10 +11,24 @@ print_r($_SESSION)
 <div class="container">
     <div class="row" >
         <div class="col">
-            <button type="button" class="btn btn-light"><a href="index.php?home">Home</a></button>
+            <button type="button" class="btn btn-light"><a href="index.php">Home</a></button>
         </div>
-        <div class="col">
+        <div class="col-8">
             <button type="button" class="btn btn-dark"><a href="index.php?form">Ajoutée des données</a></button>
+            <?php if(isset($_SESSION['table'])) {
+            echo '<button type="button" class="btn btn-secondary"><a class="text-light" href="index.php?formBonus">Ajoutée plus de données</a></button>';
+            }
+            ?>
+    
+            
+
+
+            <?php   if(isset($_GET['form'])) {
+                include 'include/form.php';
+            } ?>
+            <?php   if(isset($_GET['formBonus'])) {
+                include 'include/formBonus.php';
+            } ?>
         </div>
     </div>
 </div>
@@ -127,9 +141,6 @@ print_r($_SESSION)
     if(isset($_SESSION['table'])) {
         include 'include/ul.php';
     }
-    if(isset($_GET['form'])) {
-        include 'include/form.php';
-    }
 
 
     if(isset($_GET['debug'])) {
@@ -141,10 +152,10 @@ print_r($_SESSION)
         echo'<h1>Concaténation</h1>
         <h3>Construction d\'une phrase avec les données du tableau</h3> <br>';
         echo '<h2>'. $_SESSION['table']['prenom'] . $_SESSION['table']['nom']. '</h2><br>
-        Mon nom est '.  $_SESSION['table']['nom'].'j\'ai '.  $_SESSION['table']['age'].'et je suis '. $_SESSION['table'] . '<br>
+        Mon nom est '.  $_SESSION['table']['nom'].'j\'ai '.  $_SESSION['table']['age'].'et je suis '. $_SESSION['table']['fonction'] . '<br>
         <h3>Construction d\'une phrase</h3><br>
         <h2>'. $_SESSION['table'] . strtoupper($_SESSION['table']). '</h2>
-        Mon nom est '.  $_SESSION['table']['nom'].', j\'ai '.  $_SESSION['table']['age'].', je suis '. $_SESSION['table'] . '<br>'
+        Mon nom est '.  $_SESSION['table']['nom'].', j\'ai '.  $_SESSION['table']['age'].', je suis '. $_SESSION['table']['fonction'] . '<br>'
         . str_replace(',','.','Mon nom est,,,,,,,,,,');
     }
     if(isset($_GET['boucle'])) {
