@@ -14,7 +14,7 @@
                             <input type="number" id="age" name="age" min="18" max="70" placeholder="Age">
                         </div>
                         <div class="form-group">
-                            <label for="taille">Age:</label>
+                            <label for="taille">Taille:</label>
                             <input type="number" id="taille" name="taille" min="1.70" max="2.00" placeholder="Taille" step="0.01">
                         </div>
                         <div class="custom-control custom-radio">
